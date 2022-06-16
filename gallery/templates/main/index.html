@@ -1,5 +1,68 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+<h1 class="text-center pt-5 mt-5 nunito display-4" id="gallery">AppGala</h1><br>
+
+<div class="row" >
+  {% if images %}
+  {% for image in images%}
+  <div class="col-md-6" style="justify-content:center">
+      <h2>{{image.image_name}}</h2>
+
+  
+
+  
+    <!-- <div class="col-md-4">
+        <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+    </div>  -->
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+        <div class="card-body">
+          <h5 class="card-title">{{image.image_name}}</h5>
+          <p class="card-subtitle text-muted text-truncate">{{image.image_description}}</p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{image.id}}">
+            View More
+          </button>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{image.image_name}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img  class= "img-fluid" height = "400px"src="{{image.image.url}}" alt="">
+       
+        <h4 class="pt-3">Image description</h4><br>
+        <p>{{image.image_description}}</p>
+        <h4 >Image Category</h4><br>
+        <p>{{image.category}}</p>
+        <h4 >Image Location</h4><br>
+        <p>{{image.location}}</p>
+
+        <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}.url">
+        <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  {% endfor %}
+  {% endif %} 
+</div>
+
 
 {% endblock%}

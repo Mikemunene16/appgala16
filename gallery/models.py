@@ -71,8 +71,8 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def search_by_category(cls, category):
-        images = cls.objects.filter(category = Category.objects.filter(category_name__contains = category).first()).all()
+    def searching_image(cls, searched_image):
+        images = cls.objects.filter(image_name__icontains = searched_image)
         return images
         
 

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% if categories %}
+
+{% for category in categories %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 style="justify-content: center;">{{ category.category_name }}</h1><br>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endblock%}
