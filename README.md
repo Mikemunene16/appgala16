@@ -24,7 +24,7 @@ To get the project .......
   
 ##### Cloning the repository:  
  ```bash 
- https://github.com/Mikemunene16/app-gala.git 
+ https://github.com/Mikemunene16/appgala16.git 
 ```
 ##### Navigate into the folder and install requirements  
  ```bash 
