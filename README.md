@@ -28,11 +28,11 @@ To get the project .......
 ```
 ##### Navigate into the folder and install requirements  
  ```bash 
-cd app-gala pip install -r requirements.txt 
+cd appgala16 pip install -r requirements.txt 
 ```
 ##### Install and activate Virtual  
  ```bash 
-- python3 -m venv virtual - source venv/bin/activate  
+- python -m venv virtual - source venv/bin/activate  
 ```  
 ##### Install Dependencies  
  ```bash 
